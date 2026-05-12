@@ -1,0 +1,56 @@
+.bubble{
+  position: absolute;
+  bottom: -100px;
+  background:orangered; ;
+  border-radius: 9999px;
+  animation: floatUp 8s linear infinite;
+  filter: blur(2px);
+}
+
+.bubble1{
+  width: 120px;
+  height: 120px;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.bubble2{
+  width: 80px;
+  height: 80px;
+  left: 35%;
+  animation-delay: 2s;
+}
+
+.bubble3{
+  width: 140px;
+  height: 140px;
+  left: 60%;
+  animation-delay: 4s;
+}
+
+.bubble4{
+  width: 90px;
+  height: 90px;
+  left: 80%;
+  animation-delay: 1s;
+}
+
+@keyframes floatUp{
+  0%{
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+
+  10%{
+    opacity: 1;
+  }
+
+  80%{
+    opacity: 0.8;
+  }
+
+  100%{
+    transform: translateY(-120vh) scale(1.4);
+    opacity: 0;
+  }
+}

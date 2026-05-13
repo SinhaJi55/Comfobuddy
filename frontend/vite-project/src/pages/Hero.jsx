@@ -20,9 +20,16 @@ const Hero = () => {
       behavior: "smooth",
     });
   };
+  // const go = () => {
+  //   const section = document.getElementById("comfoworks-section");
+
+  //   section?.scrollIntoView({
+  //     behavior: "smooth",
+  //   });
+  // };
 
   const go = () => {
-    const section = document.getElementById("steps-section");
+    const section = document.getElementById("comfoworks-section");
 
     section?.scrollIntoView({
       behavior: "smooth",

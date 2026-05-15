@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const RoomCursor = () => {
+const DotCursor = () => {
   const [position, setPosition] = useState({
     x: 0,
     y: 0,
@@ -31,25 +31,44 @@ const RoomCursor = () => {
   return (
     <motion.div
       animate={{
-        x: position.x - 35,
-        y: position.y - 35,
+        x: position.x - 10,
+        y: position.y - 10,
       }}
       transition={{
         type: "spring",
-        stiffness: 250,
-        damping: 20,
+        stiffness: 300,
+        damping: 22,
       }}
-      className="pointer-events-none fixed left-0 top-0 z-[9999]"
+      className="pointer-events-none fixed left-0 top-0 z-[100000]"
     >
-      <div className="h-[60px] w-[60px] overflow-hidden rounded-full border-2 border-orange-400 shadow-[0_0_35px_rgba(255,115,0,0.7)]">
-        <img
-          src="/cursor.jpg"
-          alt="cursor"
-          className="h-full w-full object-cover"
-        />
-      </div>
+      {/* OUTER GLOW */}
+      <motion.div
+        animate={{
+          scale: [1, 1.5, 1],
+          opacity: [0.6, 1, 0.6],
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 1.2,
+          ease: "easeInOut",
+        }}
+        className="absolute h-5 w-5 rounded-full bg-orange-400 blur-md"
+      />
+
+      {/* MAIN DOT */}
+      <motion.div
+        animate={{
+          scale: [1, 0.8, 1],
+          opacity: [1, 0.5, 1],
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 0.8,
+        }}
+        className="relative h-5 w-5 rounded-full bg-orange-500 shadow-[0_0_25px_rgba(255,115,0,0.9)]"
+      />
     </motion.div>
   );
 };
 
-export default RoomCursor;
+export default DotCursor;

@@ -26,7 +26,7 @@ const SearchSection = () => {
 
   return (
     <section
-      id="search-section"
+      id="searching-section"
       className="relative overflow-hidden bg-white px-4 py-20"
     >
       {/* Background Glow */}

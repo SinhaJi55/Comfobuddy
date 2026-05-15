@@ -68,7 +68,7 @@ const stats = [
 
 const Steps = () => {
   return (
-    <section className="relative overflow-hidden bg-[#fdf8f5] py-28 px-6 " id="comfoworks-section">
+    <section className="relative overflow-hidden bg-[#fdf8f5] py-28 px-6 " id="comfoworks-sections">
 
       {/* BACKGROUND GLOWS */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-orange-200 opacity-20 blur-[120px] rounded-full"></div>

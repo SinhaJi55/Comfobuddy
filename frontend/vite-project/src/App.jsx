@@ -26,7 +26,7 @@ const HomePage = () => {
     <>
     <DoorLoader />
     <Comfoanimation/>
-      <DotCursor />
+       <DotCursor /> 
       <Navbar />
       <Hero />
       <SearchSection/>

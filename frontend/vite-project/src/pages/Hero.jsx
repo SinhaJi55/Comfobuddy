@@ -14,11 +14,11 @@ const Hero = () => {
   const navigate = useNavigate();
 
   const goto = () => {
-    const section = document.getElementById("search-section");
-
+    const section = document.getElementById("searching-section");
     section?.scrollIntoView({
-      behavior: "smooth",
-    });
+  behavior: "smooth",
+  block: "start",
+});
   };
   // const go = () => {
   //   const section = document.getElementById("comfoworks-section");
@@ -29,15 +29,16 @@ const Hero = () => {
   // };
 
   const go = () => {
-    const section = document.getElementById("comfoworks-section");
+    const section = document.getElementById("comfoworks-sections");
 
-    section?.scrollIntoView({
-      behavior: "smooth",
-    });
+      section?.scrollIntoView({
+  behavior: "smooth",
+  block: "start",
+});
   };
 
   return (
-    <section className="relative overflow-hidden bg-white pb-24 pt-32">
+    <section className="relative overflow-hidden bg-white pb-24 pt-32" >
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Orange Glow */}
@@ -391,6 +392,7 @@ const Hero = () => {
         </motion.div>
       </div>
     </section>
+    
   );
 };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ShieldCheck,
@@ -6,9 +6,13 @@ import {
   Video,
   ArrowRight,
   Sparkles,
+  Play,
 } from "lucide-react";
 
 const Verification = () => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
   const goto = () => {
     const section =
       document.getElementById("comfoworks-section");
@@ -16,6 +20,13 @@ const Verification = () => {
     section?.scrollIntoView({
       behavior: "smooth",
     });
+  };
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
   };
 
   return (
@@ -93,16 +104,15 @@ const Verification = () => {
               <div className="mb-6 flex items-center gap-3">
                 <span className="h-[2px] w-12 bg-orange-500"></span>
 
-                <p className="uppercase tracking-[4px] text-orange-500 font-semibold">
+                <p className="font-semibold uppercase tracking-[4px] text-orange-500">
                   India's Most Trusted
                 </p>
               </div>
 
               {/* Heading */}
-              <h1 className="text-5xl md:text-6xl font-black leading-tight text-[#1b1b1b]">
+              <h1 className="text-5xl font-black leading-tight text-[#1b1b1b] md:text-6xl">
                 Live Verification.
                 <br />
-
                 Real Rooms.
                 <br />
 
@@ -193,7 +203,7 @@ const Verification = () => {
               </motion.button>
             </motion.div>
 
-            {/* RIGHT IMAGE */}
+            {/* RIGHT */}
             <motion.div
               initial={{
                 opacity: 0,
@@ -237,7 +247,7 @@ const Verification = () => {
                 </div>
               </motion.div>
 
-              {/* Main Image */}
+              {/* VIDEO CARD */}
               <motion.div
                 whileHover={{
                   scale: 1.03,
@@ -245,16 +255,57 @@ const Verification = () => {
                 transition={{
                   duration: 0.5,
                 }}
-                className="relative overflow-hidden rounded-[38px]"
+                className="relative overflow-hidden rounded-[38px] cursor-pointer"
+                onClick={handlePlay}
               >
-                <img
-                  src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
-                  alt=""
-                  className="h-[650px] w-full object-cover"
-                />
+                {/* IMAGE THUMBNAIL */}
+                {!isPlaying && (
+                  <>
+                    <img
+                      src="/Room.jpg"
+                      alt=""
+                      className="h-[370px] w-full object-cover"
+                    />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/30" />
+
+                    {/* Play Button */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <motion.div
+                        whileHover={{
+                          scale: 1.1,
+                        }}
+                        whileTap={{
+                          scale: 0.95,
+                        }}
+                        className="flex h-24 w-24 items-center justify-center rounded-full border border-white/30 bg-white/20 backdrop-blur-xl"
+                      >
+                        <Play
+                          className="ml-1 h-10 w-10 fill-white text-white"
+                        />
+                      </motion.div>
+                    </div>
+                  </>
+                )}
+
+                {/* VIDEO */}
+                <video
+                  ref={videoRef}  controls muted
+                  className={`h-[370px] w-full object-cover ${
+                    isPlaying ? "block" : "hidden"
+                  }`}
+                  controls
+                  autoPlay
+                >
+                  <source
+                    src="/Room View.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+
+                {/* Overlay Gradient */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
 
                 {/* Floating Glow */}
                 <motion.div
@@ -284,19 +335,19 @@ const Verification = () => {
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-3">
                     <img
-                      src="https://randomuser.me/api/portraits/women/65.jpg"
+                      src="/I9.jpg"
                       alt=""
                       className="h-12 w-12 rounded-full border-2 border-white object-cover"
                     />
 
                     <img
-                      src="https://randomuser.me/api/portraits/men/32.jpg"
+                      src="/I10.jpg"
                       alt=""
                       className="h-12 w-12 rounded-full border-2 border-white object-cover"
                     />
 
                     <img
-                      src="https://randomuser.me/api/portraits/women/44.jpg"
+                      src="/I11.jpg"
                       alt=""
                       className="h-12 w-12 rounded-full border-2 border-white object-cover"
                     />

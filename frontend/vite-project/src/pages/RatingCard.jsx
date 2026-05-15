@@ -72,49 +72,78 @@ const RatingCard = () => {
       />
 
       {/* Profile */}
-      <div className="flex items-center gap-6">
-        <motion.div
-          whileHover={{
-            rotate: 10,
-            scale: 1.1,
-          }}
-          transition={{ type: "spring", stiffness: 300 }}
-          className="relative flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-[#ff7a2f] to-[#ff4d00] text-5xl font-black text-white shadow-[0_0_50px_rgba(255,107,26,0.6)]"
-        >
-          <motion.div
-            animate={{
-              scale: [1, 1.15, 1],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 2.5,
-            }}
-            className="absolute inset-0 rounded-full border-4 border-orange-300/40"
-          />
+     <div className="flex items-center gap-6">
+  {/* PROFILE AVATAR */}
+  <motion.div
+    whileHover={{
+      rotate: 6,
+      scale: 1.08,
+    }}
+    transition={{ type: "spring", stiffness: 260, damping: 15 }}
+    className="relative flex h-28 w-28 items-center justify-center rounded-full"
+  >
+    {/* Glow Background */}
+    <motion.div
+      animate={{
+        scale: [1, 1.2, 1],
+        opacity: [0.2, 0.4, 0.2],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 2.8,
+        ease: "easeInOut",
+      }}
+      className="absolute inset-0 rounded-full bg-orange-400 blur-xl"
+    />
 
-          RK
-        </motion.div>
+    {/* Pulsing Ring */}
+    <motion.div
+      animate={{
+        scale: [1, 1.1, 1],
+        opacity: [0.3, 0.6, 0.3],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 2.2,
+        ease: "easeInOut",
+      }}
+      className="absolute inset-0 rounded-full border-4 border-orange-300/50"
+    />
 
-        <div>
-          <motion.h2
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-4xl font-black text-black"
-          >
-            Rajesh Kumar
-          </motion.h2>
+    {/* Image Wrapper (fix layering) */}
+    <div className="absolute inset-2 overflow-hidden rounded-full border-4 border-white shadow-xl">
+      <img
+        src="/I4.jpg"
+        alt="Profile"
+        className="h-full w-full object-cover"
+      />
+    </div>
+  </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mt-2 text-lg text-[#31456c]"
-          >
-            Elite Buddy · South Delhi · 142 inspections
-          </motion.p>
-        </div>
-      </div>
+  {/* TEXT SECTION */}
+  <div>
+    <motion.h2
+      initial={{ opacity: 0, x: -40 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.2, duration: 0.6 }}
+      className="text-4xl font-black tracking-tight text-black"
+    >
+      Rajesh Kumar
+    </motion.h2>
+
+    <motion.p
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.35, duration: 0.6 }}
+      className="mt-2 text-lg font-medium text-[#31456c]"
+    >
+      Elite Buddy · South Delhi ·{" "}
+      <span className="text-orange-500 font-semibold">
+        142 inspections
+      </span>
+    </motion.p>
+  </div>
+</div>
 
       {/* Rating */}
       <div className="mt-12 flex items-center gap-8">

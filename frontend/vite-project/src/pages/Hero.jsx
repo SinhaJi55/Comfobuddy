@@ -351,19 +351,19 @@ const Hero = () => {
             <div className="flex items-center gap-3">
               <div className="flex -space-x-3">
                 <img
-                  src="https://randomuser.me/api/portraits/women/65.jpg"
+                  src="/I1.jpg"
                   alt=""
                   className="h-12 w-12 rounded-full border-2 border-white object-cover"
                 />
 
                 <img
-                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  src="I2.jpg"
                   alt=""
                   className="h-12 w-12 rounded-full border-2 border-white object-cover"
                 />
 
                 <img
-                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  src="/I3.jpg"
                   alt=""
                   className="h-12 w-12 rounded-full border-2 border-white object-cover"
                 />

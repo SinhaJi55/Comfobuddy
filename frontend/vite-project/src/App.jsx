@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
+import DotCursor from "./pages/DotCursor.jsx";
 import Navbar from "./pages/Navbar.jsx";
 import Hero from "./pages/Hero.jsx";
 import Features from "./pages/Features.jsx";
@@ -15,19 +15,25 @@ import Steps from "./pages/Steps.jsx";
 import Testimonials from "./pages/Testimonials.jsx";
 import CTASection from "./pages/CTA.jsx";
 import Footer from "./pages/Footer.jsx";
-
+import ListingSection from "./pages/ListingSection.jsx";
 import SearchSection from "./pages/Search.jsx";
 import TrustSection from "./pages/TrustSection.jsx";
 import Comfoworks from "./pages/Comfoworks.jsx";
+import DoorLoader from "./pages/DoorLoader.jsx";
+import Comfoanimation from "./pages/Comfoanimation.jsx";
 const HomePage = () => {
   return (
     <>
+    <DoorLoader />
+    <Comfoanimation/>
+      <DotCursor />
       <Navbar />
       <Hero />
       <SearchSection/>
       <Features />
       <Rooms />
       <Verification />
+      <ListingSection/>
       <Comfoworks/>
       {/* <Steps /> */}
       <TrustSection></TrustSection>
@@ -55,7 +61,6 @@ const App = () => {
           path="/search"
           element={<SearchSection />}
         />
-
       </Routes>
 
     </BrowserRouter>

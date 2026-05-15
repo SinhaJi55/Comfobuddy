@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const rooms = [
   {
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+      "/bed1.jpg",
     name: "Premium PG in Koramangala",
     price: "₹8,200",
     location: "Koramangala, Bangalore",
@@ -13,7 +13,7 @@ const rooms = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+      "/bed2.jpg",
     name: "1BHK Fully Furnished Flat",
     price: "₹18,000",
     location: "HSR Layout, Bangalore",
@@ -21,7 +21,7 @@ const rooms = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156",
+      "/bed3.jpg",
     name: "Modern Studio Apartment",
     price: "₹12,500",
     location: "Indiranagar",
@@ -29,7 +29,7 @@ const rooms = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+      "/bed5.jpg",
     name: "Cozy Private Room",
     price: "₹6,500",
     location: "Jayanagar",

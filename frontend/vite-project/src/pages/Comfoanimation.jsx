@@ -53,7 +53,7 @@ const Comfoanimation = () => {
       <div className="absolute inset-0 flex items-center justify-center">
 
         {/* COMFO */}
-        {"Comfo".split("").map((letter, index) => (
+        {"Comfort".split("").map((letter, index) => (
           <motion.span
             key={index}
             initial={{

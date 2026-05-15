@@ -6,6 +6,8 @@ import {
   Route,
 } from "react-router-dom";
 import DotCursor from "./pages/DotCursor.jsx";
+import ChatBot from "./pages/ChatBot.jsx";
+import Whatsapp from "./pages/Whatsapp.jsx";
 import Navbar from "./pages/Navbar.jsx";
 import Hero from "./pages/Hero.jsx";
 import Features from "./pages/Features.jsx";
@@ -39,6 +41,8 @@ const HomePage = () => {
       <TrustSection></TrustSection>
       <Testimonials />
       <CTASection />
+      <ChatBot />
+<Whatsapp />
       <Footer />
     </>
   );

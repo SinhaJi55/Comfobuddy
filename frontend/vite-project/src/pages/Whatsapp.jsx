@@ -8,6 +8,7 @@ const Whatsapp = () => {
       href="https://wa.me/916202101524"
       target="_blank"
       rel="noreferrer"
+      id="whatsapp"
       whileHover={{
         scale: 1.1,
       }}

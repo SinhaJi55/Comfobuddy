@@ -10,7 +10,16 @@ const playSound = (url) => {
   audio.play().catch(() => {}); // Catch block prevents errors if browser blocks autoplay
 };
 
-const navItems = ["Home", "Services", "About", "Contact"];
+const navItems = [
+  { name: "Home", id: "hero" },
+  { name: "Services", id: "searching-section" },
+  { name: "About", id: "comfoworks-sections" },
+  {
+    name: "Contact",
+  
+    whatsapp: "https://wa.me/916202101524", 
+  },
+];
 const roles = [
   { title: "Owner", icon: <Home size={28} />, desc: "List & manage properties" },
   { title: "Tenant", icon: <Users size={28} />, desc: "Find verified rooms easily" },
@@ -27,6 +36,7 @@ const Navbar = () => {
   const [countdown, setCountdown] = useState(5);
 
   const iconControls = useAnimation();
+  
 
   // Handle Countdown Logic
   useEffect(() => {
@@ -73,7 +83,7 @@ const Navbar = () => {
             <motion.div whileHover={{ scale: 1.04 }} className="flex cursor-pointer items-center gap-4" onHoverStart={handleLogoHover}>
               <div className="flex flex-col leading-none">
                 <h1 className="text-3xl font-black tracking-tight text-gray-800">
-                  Comfort <span className="bg-gradient-to-r from-orange-500 via-orange-300 to-orange-500 bg-clip-text text-transparent">Buddy</span>
+                  Comfo<span className="bg-gradient-to-r from-orange-500 via-orange-300 to-orange-500 bg-clip-text text-transparent">Buddy</span>
                 </h1>
                 <motion.p initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="text-[11px] font-bold uppercase tracking-[3px] text-orange-500/80">
                   Your Rental Partner
@@ -82,13 +92,28 @@ const Navbar = () => {
             </motion.div>
 
             {/* DESKTOP MENU */}
-            <ul className="hidden items-center gap-10 md:flex">
-              {navItems.map((item, index) => (
-                <motion.li key={index} whileHover={{ y: -3 }} className="cursor-pointer font-semibold text-gray-700 hover:text-orange-500">
-                  {item}
-                </motion.li>
-              ))}
-            </ul>
+           <ul className="hidden items-center gap-10 md:flex">
+  <ul className="hidden items-center gap-10 md:flex">
+  {navItems.map((item, index) => (
+    <motion.li
+      key={index}
+      whileHover={{ y: -3 }}
+      className="cursor-pointer font-semibold text-gray-700 hover:text-orange-500"
+      onClick={() => {
+        if (item.whatsapp) {
+          window.open(item.whatsapp, "_blank");
+        } else {
+          document.getElementById(item.id)?.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      }}
+    >
+      {item.name}
+    </motion.li>
+  ))}
+</ul>
+</ul>
 
             <div className="hidden items-center gap-4 md:flex">
               <motion.button

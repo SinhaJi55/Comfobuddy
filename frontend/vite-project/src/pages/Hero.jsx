@@ -38,7 +38,11 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white pb-24 pt-32" >
+    <section  className="relative overflow-hidden pb-24 pt-32" id="hero"
+  style={{
+    background:
+      "radial-gradient(circle at top left, #fff3e8 0%, #fff8f3 35%, #ffffff 70%)",
+  }}>
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Orange Glow */}
@@ -52,7 +56,7 @@ const Hero = () => {
             duration: 6,
             ease: "easeInOut",
           }}
-          className="absolute -left-20 top-10 h-96 w-96 rounded-full bg-orange-400 blur-[140px]"
+          className="absolute -left-20 top-10 h-96 w-96 rounded-full"
         />
 
         {/* Cyan Glow */}
@@ -330,7 +334,7 @@ const Hero = () => {
               }}
               className="w-full h-[700px] bg-contain bg-no-repeat bg-center"
               style={{
-                backgroundImage: "url('/image.png')",
+                backgroundImage: "url('/orange.png')",
               }}
             />
 

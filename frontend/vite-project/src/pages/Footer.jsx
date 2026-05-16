@@ -196,39 +196,36 @@ const Footer = () => {
         </motion.div>
 
         {/* Newsletter */}
-        <motion.div variants={itemVariants}>
-          <h3 className="font-bold text-lg mb-5 text-gray-800">
-            Stay Updated
-          </h3>
+      {/* Newsletter */}
+{/* Newsletter */}
+{/* Newsletter */}
+<motion.div variants={itemVariants}>
+  <h3 className="font-bold text-lg mb-4 text-gray-800">
+    Stay Updated
+  </h3>
 
-          <p className="text-gray-500 leading-7 mb-6">
-            Get latest rooms and offers directly in your inbox.
-          </p>
+  <p className="text-gray-500 leading-6 mb-5 text-sm">
+    Get latest rooms and offers directly in your inbox.
+  </p>
 
-          <motion.div
-            whileHover={{
-              boxShadow: "0px 10px 30px rgba(255,107,53,0.12)",
-            }}
-            className="bg-white rounded-2xl border border-[#ece7e2] p-2 flex items-center transition"
-          >
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 outline-none px-3 py-2 bg-transparent text-sm"
-            />
+  <div className="bg-white border border-[#ece7e2] rounded-2xl p-3">
+    
+    <input
+      type="email"
+      placeholder="Enter your email"
+      className="w-full px-4 py-3 outline-none text-sm bg-transparent border border-gray-200 rounded-xl"
+    />
 
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 10px 25px rgba(255,107,53,0.35)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="rounded-2xl border border-orange-300 py-3 font-semibold text-white px-8 mt-8  shadow-md transition-all bg-orange-600"
-            >
-              Subscribe
-            </motion.button>
-          </motion.div>
-        </motion.div>
+    <motion.button
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.96 }}
+      className="w-full mt-4 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl text-sm font-semibold transition-all"
+    >
+      Subscribe
+    </motion.button>
+
+  </div>
+</motion.div>
 
       </div>
 

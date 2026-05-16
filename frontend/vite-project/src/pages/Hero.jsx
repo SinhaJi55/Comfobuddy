@@ -20,13 +20,7 @@ const Hero = () => {
   block: "start",
 });
   };
-  // const go = () => {
-  //   const section = document.getElementById("comfoworks-section");
-
-  //   section?.scrollIntoView({
-  //     behavior: "smooth",
-  //   });
-  // };
+  
 
   const go = () => {
     const section = document.getElementById("comfoworks-sections");

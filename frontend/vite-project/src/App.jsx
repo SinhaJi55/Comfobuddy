@@ -10,6 +10,7 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// HOME PAGE COMPONENTS
 import DotCursor from "./pages/DotCursor.jsx";
 import ChatBot from "./pages/ChatBot.jsx";
 import Whatsapp from "./pages/Whatsapp.jsx";
@@ -28,11 +29,9 @@ import TrustSection from "./pages/TrustSection.jsx";
 import Comfoworks from "./pages/Comfoworks.jsx";
 import DoorLoader from "./pages/DoorLoader.jsx";
 import Comfoanimation from "./pages/Comfoanimation.jsx";
-import Dashboard from "./dashboard/Dashboard.jsx";
-import ListingsGrid from "./dashboard/ListingsGrid.jsx";
 
-// REGISTER GSAP
-
+// OWNER DASHBOARD
+import OwnerView from "./components/OwnerPortal/OwnerView.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
@@ -70,10 +69,8 @@ const HomePage = () => {
 
   return (
     <>
-     
-    {/* <Dashboard></Dashboard> */}
-    <ListingsGrid></ListingsGrid>
-      {/* <DoorLoader />
+
+      <DoorLoader />
 
       <Comfoanimation />
 
@@ -124,35 +121,51 @@ const HomePage = () => {
       <section id="cta">
         <CTASection />
       </section>
+
       <ChatBot />
 
       <Whatsapp />
 
-      <Footer /> */}
-      {/* <Dashboard></Dashboard> */}
+      <Footer />
+
     </>
   );
 };
 
 const App = () => {
   return (
+
     <BrowserRouter>
 
       <Routes>
 
+        {/* HOME PAGE */}
         <Route
           path="/"
           element={<HomePage />}
         />
+        {/* Owner PAGE */}
+        <Route
+  path="/owner-dashboard"
+  element={<OwnerView />}
+/>
 
+        {/* SEARCH PAGE */}
         <Route
           path="/search"
           element={<SearchSection />}
         />
 
+        {/* OWNER DASHBOARD */}
+        <Route
+          path="/owner-dashboard"
+          element={<OwnerView />}
+        />
+
       </Routes>
 
     </BrowserRouter>
+
   );
 };
 

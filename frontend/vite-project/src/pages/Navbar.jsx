@@ -13,10 +13,12 @@ const playSound = (url) => {
   audio.volume = 0.4;
   audio.play().catch(() => {});
 };
-
+import { useNavigate } from "react-router-dom";
 // 3D character image (swap with your own transparent PNG anytime)
 const CHARACTER_IMG =
   "https://customer-assets.emergentagent.com/job_dc26f942-acd3-44ef-93bd-247ea8ff9faa/artifacts/z35cy29h_image.png";
+  const CHARACTER_VIDEO =
+  "/JUMP ANIMATION.mp4";
 
 const navItems = [
   { name: "Home", id: "hero" },
@@ -40,9 +42,10 @@ const Navbar = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [countdown, setCountdown] = useState(TOTAL_SECONDS);
-
+const navigate = useNavigate();
   const iconControls = useAnimation();
-
+const CLICK_SOUND =
+  "/task-complete.mp3";
   // Countdown
   useEffect(() => {
     let timer;
@@ -75,11 +78,36 @@ const Navbar = () => {
   };
 
   const handleAuthSubmit = (e) => {
-    e.preventDefault();
-    playSound("https://mixkit.co");
-    setIsSuccess(true);
-    setTimeout(() => closeModal(), 3000);
-  };
+  e.preventDefault();
+
+  playSound(CLICK_SOUND);
+
+  setIsSuccess(true);
+
+  // OWNER LOGIN
+  if (selectedRole === "Owner") {
+
+    setTimeout(() => {
+
+      closeModal();
+
+      navigate("/owner-dashboard");
+
+    }, 2000);
+
+  }
+
+  // OTHER USERS
+  else {
+
+    setTimeout(() => {
+
+      closeModal();
+
+    }, 2000);
+
+  }
+};
 
   const mm = String(Math.floor(countdown / 60)).padStart(2, "0");
   const ss = String(countdown % 60).padStart(2, "0");
@@ -163,7 +191,7 @@ const Navbar = () => {
               ))}
             </ul>
 
-            <div className="hidden items-center gap-4 md:flex">
+    <div className="hidden items-center gap-4 md:flex">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -171,7 +199,7 @@ const Navbar = () => {
                   setAuthMode("login");
                   setAuthOpen(true);
                   setSelectedRole(null);
-                  playSound("https://mixkit.co");
+                  playSound(CLICK_SOUND);
                 }}
                 className="rounded-full border border-orange-300 px-6 py-2.5 font-semibold text-orange-500"
               >
@@ -184,7 +212,7 @@ const Navbar = () => {
                   setAuthMode("signup");
                   setAuthOpen(true);
                   setSelectedRole(null);
-                  playSound("https://mixkit.co");
+                  playSound(CLICK_SOUND);
                 }}
                 className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-[#ff7a2f] px-7 py-2.5 font-semibold text-white shadow-[0_12px_30px_rgba(255,107,26,0.35)]"
               >
@@ -277,17 +305,20 @@ const Navbar = () => {
     )}
 
     {/* CHARACTER — transparent PNG only */}
-    <motion.img
-      src={CHARACTER_IMG}
-      alt="Mascot"
-      animate={characterAnim}
-      transition={characterTransition}
-      whileHover={{
-        rotate: [0, -12, 12, -8, 0],
-        transition: { duration: 0.6 },
-      }}
-      className="max-h-[420px] w-auto object-contain drop-shadow-[0_25px_25px_rgba(0,0,0,0.25)]"
-    />
+    <motion.video
+  src={CHARACTER_VIDEO}
+  autoPlay
+  loop
+  muted
+  playsInline
+  animate={characterAnim}
+  transition={characterTransition}
+  whileHover={{
+    rotate: [0, -12, 12, -8, 0],
+    transition: { duration: 0.6 },
+  }}
+  className="max-h-[420px] w-auto object-contain drop-shadow-[0_25px_25px_rgba(0,0,0,0.25)]"
+/>
 
     {/* Floor shadow */}
     <motion.div
@@ -359,7 +390,7 @@ const Navbar = () => {
                           whileHover={{ x: 10, backgroundColor: "#fff7f2" }}
                           onClick={() => {
                             setSelectedRole(role.title);
-                            playSound("https://mixkit.co");
+                            playSound(CLICK_SOUND);
                           }}
                           className="flex items-center gap-5 rounded-[28px] border border-orange-100 p-4 transition-colors"
                         >

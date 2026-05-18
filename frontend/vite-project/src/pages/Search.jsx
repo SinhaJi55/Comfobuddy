@@ -133,28 +133,6 @@ const SearchSection = () => {
             </div>
           </motion.div>
 
-          {/* Type */}
-          <motion.div whileHover={{ y: -6 }}>
-            <p className="mb-3 text-sm font-semibold uppercase text-black">
-              Type
-            </p>
-
-            <div className="relative">
-              <select
-                value={type}
-                onChange={(e) => setType(e.target.value)}
-                className="h-[74px] w-full appearance-none rounded-2xl border border-orange-200 bg-white px-5 text-lg shadow-sm outline-none hover:border-orange-400 hover:shadow-lg"
-              >
-                <option>Any type</option>
-
-                {typeOptions[active].map((item, i) => (
-                  <option key={i}>{item}</option>
-                ))}
-              </select>
-
-              <ChevronDown className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-gray-500" />
-            </div>
-          </motion.div>
 
           {/* Budget */}
           <motion.div whileHover={{ y: -6 }}>
@@ -179,6 +157,28 @@ const SearchSection = () => {
             </div>
           </motion.div>
 
+          {/* Type */}
+          <motion.div whileHover={{ y: -6 }}>
+            <p className="mb-3 text-sm font-semibold uppercase text-black">
+              Type
+            </p>
+
+            <div className="relative">
+              <select
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+                className="h-[74px] w-full appearance-none rounded-2xl border border-orange-200 bg-white px-5 text-lg shadow-sm outline-none hover:border-orange-400 hover:shadow-lg"
+              >
+                <option>Any type</option>
+
+                {typeOptions[active].map((item, i) => (
+                  <option key={i}>{item}</option>
+                ))}
+              </select>
+
+              <ChevronDown className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-gray-500" />
+            </div>
+          </motion.div>
           {/* Furnishing */}
           <motion.div whileHover={{ y: -6 }}>
             <p className="mb-3 text-sm font-semibold uppercase text-black">

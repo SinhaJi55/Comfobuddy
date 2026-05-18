@@ -28,7 +28,8 @@ import TrustSection from "./pages/TrustSection.jsx";
 import Comfoworks from "./pages/Comfoworks.jsx";
 import DoorLoader from "./pages/DoorLoader.jsx";
 import Comfoanimation from "./pages/Comfoanimation.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
+import Dashboard from "./dashboard/Dashboard.jsx";
+import ListingsGrid from "./dashboard/ListingsGrid.jsx";
 
 // REGISTER GSAP
 
@@ -69,7 +70,10 @@ const HomePage = () => {
 
   return (
     <>
-      <DoorLoader />
+     
+    {/* <Dashboard></Dashboard> */}
+    <ListingsGrid></ListingsGrid>
+      {/* <DoorLoader />
 
       <Comfoanimation />
 
@@ -124,7 +128,8 @@ const HomePage = () => {
 
       <Whatsapp />
 
-      <Footer />
+      <Footer /> */}
+      {/* <Dashboard></Dashboard> */}
     </>
   );
 };

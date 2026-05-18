@@ -1,6 +1,6 @@
 @import "tailwindcss";
 body {
-  cursor: none;
+  cursor: pointer;
 }
 html {
   scroll-behavior: smooth;

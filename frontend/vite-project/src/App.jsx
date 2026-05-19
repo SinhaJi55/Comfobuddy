@@ -131,7 +131,7 @@ const HomePage = () => {
       <Whatsapp />
 
       <Footer /> 
-      <BuddyDashboard></BuddyDashboard>
+      {/* <BuddyDashboard></BuddyDashboard> */}
     
 
     </>

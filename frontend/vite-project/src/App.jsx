@@ -29,9 +29,12 @@ import TrustSection from "./pages/TrustSection.jsx";
 import Comfoworks from "./pages/Comfoworks.jsx";
 import DoorLoader from "./pages/DoorLoader.jsx";
 import Comfoanimation from "./pages/Comfoanimation.jsx";
-
+import Schedule from "./components/BuddyDashboard/Schedule/Schedule.jsx";
 // OWNER DASHBOARD
 import OwnerView from "./components/OwnerPortal/OwnerView.jsx";
+import BuddyDashboard from "./components/BuddyDashboard/BuddyDashboard.jsx";
+import Sidebar from "./components/BuddyDashboard/Sidebar.jsx";
+import Dashboard from "./components/BuddyDashboard/Schedule/ScheduleDashboard.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
@@ -69,6 +72,7 @@ const HomePage = () => {
 
   return (
     <>
+
 
       <DoorLoader />
 
@@ -126,7 +130,9 @@ const HomePage = () => {
 
       <Whatsapp />
 
-      <Footer />
+      <Footer /> 
+      <BuddyDashboard></BuddyDashboard>
+    
 
     </>
   );
@@ -161,8 +167,22 @@ const App = () => {
           path="/owner-dashboard"
           element={<OwnerView />}
         />
+        {/* BUDDY DASHBOARD */}
+        <Route
+  path="/buddy-dashboard"
+  element={<BuddyDashboard />}
+  
+/>
+  <Route
+   path ="/schedule"
+ 
+  element={<Dashboard />}
+  
+/>
+
 
       </Routes>
+      
 
     </BrowserRouter>
 

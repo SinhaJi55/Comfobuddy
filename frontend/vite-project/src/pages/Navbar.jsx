@@ -96,6 +96,17 @@ const CLICK_SOUND =
     }, 2000);
 
   }
+  if (selectedRole === "Buddy") {
+
+    setTimeout(() => {
+
+      closeModal();
+
+      navigate("/buddy-dashboard");
+
+    }, 2000);
+
+  }
 
   // OTHER USERS
   else {

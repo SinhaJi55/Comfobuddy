@@ -6,8 +6,9 @@ import ScheduleNavbar from "./ScheduleNavbar.jsx";
 import ScheduleSectionHeader from "./ScheduleSectionHeader.jsx";
 import ScheduleTable from "./ScheduleTable.jsx";
 import ScheduleOverviewCard from "./ScheduleOverviewCard.jsx";
-
+import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
+    const navigate=useNavigate();
   return (
     <div className="flex">
       <ScheduleSidebar />

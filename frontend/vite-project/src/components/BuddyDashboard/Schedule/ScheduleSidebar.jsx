@@ -14,11 +14,12 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const ScheduleSidebar = () => {
-   
+     const navigate=useNavigate();  
   const menus = [
     {
       title: "Dashboard",
       icon: <LayoutDashboard size={18} />,
+      path:"/buddy-dashboard",
     },
     {
       title: "Schedule",
@@ -77,6 +78,7 @@ const ScheduleSidebar = () => {
         {menus.map((item, index) => (
           <div
             key={index}
+             onClick={() => navigate(item.path)}
             className={`flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer transition-all duration-300 hover:translate-x-2 hover:shadow-lg ${
               item.active
                 ? "bg-orange-500 text-white"

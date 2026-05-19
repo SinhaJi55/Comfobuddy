@@ -6,7 +6,6 @@ import {
   Clock3,
   IndianRupee,
 } from "lucide-react";
-
 const cards = [
   {
     icon: <CalendarDays size={28} />,

@@ -15,7 +15,7 @@ export const sidebarItems = [
     title: "Dashboard",
     icon: FiGrid,
     active: true,
-    path: "/",
+    path: "/buddy-dashboard",
   },
   {
     title: "Schedule",

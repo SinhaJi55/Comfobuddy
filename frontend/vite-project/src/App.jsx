@@ -171,7 +171,6 @@ const App = () => {
         <Route
   path="/buddy-dashboard"
   element={<BuddyDashboard />}
-  
 />
   <Route
    path ="/schedule"

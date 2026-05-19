@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import SidebarItem from "./SidebarItems.jsx";
-import { sidebarItems } from "./sidebarData.js";
+import { sidebarItems } from "./SidebarData.js";
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {

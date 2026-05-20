@@ -77,9 +77,8 @@ const HomePage = () => {
 
   return (
     <>
-{/* 
- <LivePage/> */}
-      {/* <DoorLoader />
+
+      <DoorLoader />
 
       <Comfoanimation />
 
@@ -132,9 +131,9 @@ const HomePage = () => {
       </section>
 
       <ChatBot />
-      <Whatsapp /> */}
-<ReportsPage></ReportsPage>
-      {/* <Footer />   */}
+      <Whatsapp />
+
+      <Footer />  
       {/* <BuddyDashboard></BuddyDashboard> */}
     </>
   );

@@ -1,7 +1,6 @@
 // components/Navbar.jsx
 
 import { Bell } from "lucide-react";
-
 const ScheduleNavbar = () => {
   return (
     <div className="bg-white px-8 py-5 flex items-center justify-between border-b shadow-sm sticky top-0 z-50">

@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const ScheduleSidebar = () => {
+const Sidebar = () => {
      const navigate=useNavigate();  
   const menus = [
     {
@@ -24,7 +24,8 @@ const ScheduleSidebar = () => {
     {
       title: "Schedule",
       icon: <Calendar size={18} />,
-      active: true,
+      path:"/schedule"
+     
     },
     {
       title: "Live Call",
@@ -34,32 +35,28 @@ const ScheduleSidebar = () => {
     {
       title: "Checklist",
       icon: <ClipboardList size={18} />,
-      path:"/checklist"
+       active: true,
     },
     {
       title: "Reports",
       icon: <FileText size={18} />,
-        path :"/report"
+      path :"/report"
     },
     {
       title: "Red Flags",
       icon: <Flag size={18} />,
-        path :"/redflag"
     },
     {
       title: "Area Score",
       icon: <MapPin size={18} />,
-        path :"/areascore"
     },
     {
       title: "Earnings",
       icon: <IndianRupee size={18} />,
-        path :"/earning"
     },
     {
       title: "Profile",
       icon: <User size={18} />,
-        path :"/profile"
     },
   ];
 
@@ -89,7 +86,7 @@ const ScheduleSidebar = () => {
             className={`flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer transition-all duration-300 hover:translate-x-2 hover:shadow-lg ${
               item.active
                 ? "bg-orange-500 text-white"
-                : "text-black hover:bg-orange-100"
+                : "text-black hover:bg-orange-500 hover:text-white"
             }`}
           >
             {item.icon}
@@ -103,5 +100,4 @@ const ScheduleSidebar = () => {
     </div>
   );
 };
-
-export default ScheduleSidebar;
+export default Sidebar;

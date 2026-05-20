@@ -20,11 +20,8 @@ const Hero = () => {
   block: "start",
 });
   };
-  
-
   const go = () => {
     const section = document.getElementById("comfoworks-sections");
-
       section?.scrollIntoView({
   behavior: "smooth",
   block: "start",

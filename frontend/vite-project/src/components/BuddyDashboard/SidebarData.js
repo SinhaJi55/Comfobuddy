@@ -27,7 +27,7 @@ export const sidebarItems = [
     title: "Live Call",
     icon: FiVideo,
     badge: 1,
-    path: "/live-call",
+    path :"/live-call"
   },
   {
     title: "Checklist",

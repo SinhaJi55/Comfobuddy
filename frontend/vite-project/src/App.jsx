@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./index.css";
-
+import ChecklistPage from "./components/BuddyDashboard/Checklist/CheckListPage.jsx";
 import {
   BrowserRouter,
   Routes,
@@ -31,10 +31,15 @@ import DoorLoader from "./pages/DoorLoader.jsx";
 import Comfoanimation from "./pages/Comfoanimation.jsx";
 import Schedule from "./components/BuddyDashboard/Schedule/Schedule.jsx";
 // OWNER DASHBOARD
+import ReportsPage from "./components/BuddyDashboard/ReportSection/ReportPage.jsx";
 import OwnerView from "./components/OwnerPortal/OwnerView.jsx";
 import BuddyDashboard from "./components/BuddyDashboard/BuddyDashboard.jsx";
 import Sidebar from "./components/BuddyDashboard/Sidebar.jsx";
 import Dashboard from "./components/BuddyDashboard/Schedule/ScheduleDashboard.jsx";
+import LivePage from "./components/BuddyDashboard/Livecall/Livepage.jsx";
+import LiveCallPage from './components/BuddyDashboard/Livecall/Livepage.jsx'
+import RedFlagsPage from "./components/BuddyDashboard/RedFlag/Redmain.jsx";
+import AreaScorePage from "./AreaSide/AreaScorePage.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
@@ -72,9 +77,9 @@ const HomePage = () => {
 
   return (
     <>
-
-
-      <DoorLoader />
+{/* 
+ <LivePage/> */}
+      {/* <DoorLoader />
 
       <Comfoanimation />
 
@@ -127,10 +132,9 @@ const HomePage = () => {
       </section>
 
       <ChatBot />
-
-      <Whatsapp />
-
-      <Footer /> 
+      <Whatsapp /> */}
+<ReportsPage></ReportsPage>
+      {/* <Footer />   */}
       {/* <BuddyDashboard></BuddyDashboard> */}
     </>
   );
@@ -159,6 +163,10 @@ const App = () => {
           path="/search"
           element={<SearchSection />}
         />
+        <Route
+          path="/areascore"
+          element={<AreaScorePage />}
+        />
 
         {/* OWNER DASHBOARD */}
         <Route
@@ -176,9 +184,28 @@ const App = () => {
   element={<Dashboard />}
   
 />
+<Route
+   path ="/live-call"
+  element={<LivePage />}
+/>
+ {/* CHECKLIST PAGE */}
+        <Route
+          path="/checklist"
+          element={<ChecklistPage />}
+        />
 
-
+       {/* REPORT PAGE */}
+        <Route
+          path="/report"
+          element={<ReportsPage />}
+        />
+        <Route
+          path= "/redflags"
+          element={<RedFlagsPage/>}
+        />
       </Routes>
+
+  
       
 
     </BrowserRouter>
